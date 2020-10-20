@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_004646) do
 
   create_table "coins", force: :cascade do |t|
     t.string "description"
-    t.string "aconym"
+    t.string "acronym"
     t.string "url_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
