@@ -3,14 +3,10 @@ namespace :dev do
   task setup: :environment do
     if Rails.env.development?
       show_spinner('Dropping') { %x(rails db:drop) }
-
       show_spinner('Creating') { %x(rails db:create) } 
-        
       show_spinner('Migrating') { %x(rails db:migrate) }
-
-      %x(rails dev:add_coins)
-
       %x(rails dev:add_mining_types)
+      %x(rails dev:add_coins)
     else
       puts 'Only runned on development envinronment'
     end
@@ -23,19 +19,22 @@ namespace :dev do
         {
           description: 'Bitcoin',
           acronym: 'BTC',
-          url_image: 'https://img2.gratispng.com/20180604/zya/kisspng-bitcoin-com-cryptocurrency-logo-zazzle-kibuba-btc-5b15aa1f157d09.468430171528146463088.jpg'
+          url_image: 'https://img2.gratispng.com/20180604/zya/kisspng-bitcoin-com-cryptocurrency-logo-zazzle-kibuba-btc-5b15aa1f157d09.468430171528146463088.jpg',
+          mining_type: MiningType.find_by(acronym: 'PoW')
         },
 
         {
           description: 'Etherium',
           acronym: 'ETH',
-          url_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png/768px-ETHEREUM-YOUTUBE-PROFILE-PIC.png'
+          url_image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/ETHEREUM-YOUTUBE-PROFILE-PIC.png/768px-ETHEREUM-YOUTUBE-PROFILE-PIC.png',
+          mining_type: MiningType.all.sample
         },
 
         {
           description: 'Dash',
           acronym: 'DASH',
-          url_image: 'https://cryptomined.com/images/flags/dash_circle_Flag_1.png'
+          url_image: 'https://cryptomined.com/images/flags/dash_circle_Flag_1.png',
+          mining_type: MiningType.all.sample
         }
       ]
 
