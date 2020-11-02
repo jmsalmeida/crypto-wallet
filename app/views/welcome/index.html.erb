@@ -1,5 +1,15 @@
+<p>
+  <%= link_to 'Português', root_path(locale: "pt-BR") %>
+</p>
+
+<p>
+  <%= link_to 'Inglês', root_path(locale: "en") %>
+</p>
+
 <h1>Seja bem vindo!</h1>
 <p>Date: <%= l(Date.today) %></p>
+
+<h2><%= cookies[:curso] %></h2>
 
 <%= render "menu"%>
 
