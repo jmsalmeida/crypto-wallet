@@ -1,6 +1,7 @@
 <h1>Seja bem vindo!</h1>
-<p>Date: <%= br_date Date.today %></p>
+<p>Date: <%= l(Date.today) %></p>
 
 <%= render "menu"%>
 
+<%= t('hello') %>
 <p>Voçê está em ambiente de <%= rails_env %></p>
