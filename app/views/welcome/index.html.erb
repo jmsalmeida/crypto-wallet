@@ -1,17 +1,8 @@
-<p>
-  <%= link_to 'Português', root_path(locale: "pt-BR") %>
-</p>
+<div class="jumbotron">
+  <h1 class="display-4">Seja bem vindo</h1>
+  <p class="lead">Este é o "crypto wallet", uma aplicação para cadastro de cripto-moedas</p>
+  <hr class="my-4">
 
-<p>
-  <%= link_to 'Inglês', root_path(locale: "en") %>
-</p>
+  <%= render "menu"%>
+</div>
 
-<h1>Seja bem vindo!</h1>
-<p>Date: <%= l(Date.today) %></p>
-
-<h2><%= cookies[:curso] %></h2>
-
-<%= render "menu"%>
-
-<%= t('hello') %>
-<p>Voçê está em ambiente de <%= rails_env %></p>
