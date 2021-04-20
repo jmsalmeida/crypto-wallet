@@ -1,7 +1,9 @@
 pt-BR:
-  actual_locale: 'Português'
+  current_locale: 'Português'
+  welcome: "Seja Bem Vindo!"
   hello: "Olá mundo"
   links:
     edit: 'Editar'
     show: 'Mostrar'
     destroy: 'Apagar'
+    new: 'Novo'
